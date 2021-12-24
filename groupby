@@ -1,0 +1,21 @@
+drink.columns = [x.strip() for x in drink.columns]
+drink.columns =  drink.columns.str.upper()
+
+
+drink.groupby("CONTINENT")["BEER_SERVINGS"].mean()
+
+# for each continent print the statistics for wine consumption?
+
+drink.groupby("CONTINENT")["WINE_SERVINGS"].describe()
+
+
+# the mean alcohol consumption per continent for every column.
+
+drink.groupby("CONTINENT").mean()
+
+# Print the mean, min and max values for spirit consumption.
+
+drink.groupby("CONTINENT")["SPIRIT_SERVINGS"].agg(["mean", "min","max"])
+
+
+
